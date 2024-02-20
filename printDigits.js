@@ -1,20 +1,9 @@
-function decoder(code) {
-  let decodedString = "";
-  let skip = 0;
-
-  for (let i = 0; i < code.length; i++) {
-    const char = code[i];
-    if (!isNaN(char)) {
-      skip = parseInt(char);
-    } else {
-      decodedString += char;
-      skip--;
-      if (skip === 0) {
-        skip = -1;
-      }
-    }
+function printDigits(num) {
+  while (num > 0) {
+    const digit = num % 10;
+    console.log(digit);
+    num = Math.floor(num / 10);
   }
-  return decodedString;
 }
 
-console.log(decoder("0h2xce5ngbrdy"));
+printDigits(314);
